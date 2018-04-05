@@ -5,9 +5,19 @@ import { Link } from "react-router-dom";
 const Navbar = (props) => {
   return (
     <div className="navbar">
-      {/* <LogInForm loggedIn={props.loggedIn}/> */}
-      <Link to="/log-in" >Log In</Link>
-      <Link to="/register" >Sign Up</Link>
+      {
+        props.loggedIn ? 
+        (
+         <p>...</p>
+        ) :
+        (
+          <div>
+           <Link to="/log-in" >Log In</Link>
+           <Link to="/register" >Sign Up</Link>
+           </div>
+        )
+      }
+      
     </div>
   );
 };

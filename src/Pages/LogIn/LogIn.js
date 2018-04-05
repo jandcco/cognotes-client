@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import LogInForm from "../../Components/LogInForm/LogInForm";
-const LogIn = () => {
+const LogIn = (props) => {
   return (
     <div>
       <h1> Log In </h1>
-      <LogInForm />
+      <LogInForm setWebToken={props.setWebToken} />
     </div>
   );
 };

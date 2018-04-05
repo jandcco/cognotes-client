@@ -1,5 +1,7 @@
 import React from "react";
+import {withRouter } from "react-router-dom";
 import axios from "axios";
+
 class LogInForm extends React.Component{
   constructor(props){
     super(props);
@@ -25,6 +27,10 @@ class LogInForm extends React.Component{
     });
     console.log(res);
     this.props.setWebToken(res.data.token);
+    const dashboard = {
+      pathname: "/dashboard"
+    };
+    this.props.history.push(dashboard);
   }
   render(){
     return(
@@ -47,4 +53,4 @@ class LogInForm extends React.Component{
   }
 }
 
-export default LogInForm;
+export default withRouter(LogInForm);
