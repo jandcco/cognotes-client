@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-class LogIn extends React.Component{
+class LogInForm extends React.Component{
   constructor(props){
     super(props);
 
@@ -47,4 +47,4 @@ class LogIn extends React.Component{
   }
 }
 
-export default LogIn;
+export default LogInForm;

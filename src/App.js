@@ -1,8 +1,14 @@
 import React, { Component} from "react";
-import Message from "./Components/Message/Message.js";
-import LogIn from "./Components/LogIn/LogIn";
-import Register from "./Components/Register/Register";
-import getUsers from "./actions/getUsers";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Navbar from "./Components/Navbar/Navbar";
+import Home from "./Pages/Home/Home";
+import LogIn from "./Pages/LogIn/LogIn";
+import Register from "./Pages/Register/Register";
 import "./App.css";
 
 class App extends Component{
@@ -34,13 +40,20 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <LogIn setWebToken={this.setWebToken}/>
-        <Register />
-        <h1> Hello, World! </h1>
-        <Message message="Welcome to the react-starter. Start hacking away!" />
-        <button onClick={() => {
-          getUsers(this.state.token);
-        }}>Get Users</button>
+        
+        <Router>
+          <div>
+            <Navbar loggedIn={this.state.loggedIn}/>
+            {/* <div className="navbar">
+            <LogIn setWebToken={this.setWebToken}/>
+            <Register />
+            </div> */}
+            <Route exact path="/" component={Home} />
+            <Route exact path="/log-in" component={LogIn} />
+            <Route path="/register" component={Register} />
+          </div>
+        </Router>
+        
       </div>
     );
   }
