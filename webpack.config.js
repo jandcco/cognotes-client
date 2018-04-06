@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const bundlePath = path.resolve(__dirname, "public/");
+const bundlePath = path.join(__dirname, "public");
 
 module.exports = {
   entry: "./src/index.js",
@@ -20,6 +20,7 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
+    path: path.resolve(__dirname, "public"),
     publicPath: bundlePath,
     filename: "bundle.js"
   },
