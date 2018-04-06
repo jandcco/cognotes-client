@@ -21,7 +21,7 @@ class Register extends React.Component{
   async handleRegisterSubmission (event) {
     event.preventDefault();
     try{
-      const res = await axios.post(`${productionBaseURI}/users`,{
+      const res = await axios.post(`http://cognotes.herokuapp.com/users`,{
         email: this.state.email,
         password: this.state.password,
         displayName: this.state.displayName
