@@ -29,7 +29,7 @@ class EditNote extends React.Component{
 
   async prepopulateFields(){
     console.log(this.props);
-    const noteDetails = await axios.get(`http://localhost:3001/note?id=${this.props.match.params.id}`);
+    const noteDetails = await axios.get(`http://cognotes.herokuapp.com/note?id=${this.props.match.params.id}`);
     console.log(noteDetails);
     this.content.value = noteDetails.data.text;
     this.title.value = noteDetails.data.title;
@@ -38,7 +38,7 @@ class EditNote extends React.Component{
   async handleEditSubmission (event) {
     event.preventDefault();
     console.log(this.content)
-    const res = await axios.put(`http://localhost:3001/note/${this.props.match.params.id}`,{
+    const res = await axios.put(`http://cognotes.herokuapp.com/note/${this.props.match.params.id}`,{
       updatedTitle: this.title.value,
       updatedText: this.content.value,
       token: this.props.token
