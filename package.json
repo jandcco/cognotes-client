@@ -6,7 +6,7 @@
   "proxy": "http://localhost:3001",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.jsgit ",
-    "prod": "NODE_ENV=production node server.js",
+    "prod": "NODE_ENV=production node src/server.js",
     "postinstall": "webpack -p",
     "build": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
