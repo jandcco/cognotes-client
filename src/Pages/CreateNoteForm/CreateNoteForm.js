@@ -22,7 +22,7 @@ class CreateNoteForm extends React.Component{
 
   async handleNoteSubmission (event) {
     event.preventDefault();
-    const res = await axios.post("http://localhost:3001/note",{
+    const res = await axios.post("http://cognotes.herokuapp.com/note",{
       title: this.state.title,
       text: this.state.text,
       token: this.props.token

@@ -21,7 +21,7 @@ class LogInForm extends React.Component{
 
   async handleLoginSubmission (event) {
     event.preventDefault();
-    const res = await axios.post("http://cognotes.herokuapp/login",{
+    const res = await axios.post("http://cognotes.herokuapp.com/login",{
       email: this.state.email,
       password: this.state.password
     });
