@@ -8,7 +8,10 @@ const Navbar = (props) => {
       {
         props.loggedIn ? 
         (
-         <p>...</p>
+         <div>
+           <Link to="/search" >Search Groups or Tags</Link>
+           <Link to="/logout" >Log Out</Link>
+         </div>
         ) :
         (
           <div>

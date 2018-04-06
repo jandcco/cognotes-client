@@ -5,9 +5,8 @@
   "main": "./src/index.js",
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.jsgit ",
-    "prod": "NODE_ENV=production node src/server.js",
-    "heroku-postbuild": "webpack -p",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development -d",
+    "start:prod": "babel-node ./src/index.js",
     "build": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
