@@ -1,9 +1,8 @@
 import axios from "axios";
 
 const getUsers = async (token) => {
-  console.log('cookies::::::', document.cookie)
   try{
-    const response = await axios.get("http://localhost:3001/users", {
+    const response = await axios.get("http://cognotes.herokuapp.com/users", {
       withCredentials: true,
       params: {
         token

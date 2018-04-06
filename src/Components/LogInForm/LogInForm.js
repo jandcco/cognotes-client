@@ -21,11 +21,11 @@ class LogInForm extends React.Component{
 
   async handleLoginSubmission (event) {
     event.preventDefault();
+    console.log(process.env);
     const res = await axios.post("http://cognotes.herokuapp.com/login",{
       email: this.state.email,
       password: this.state.password
     });
-    console.log(res);
     this.props.setWebToken(res.data.token);
     const dashboard = {
       pathname: "/dashboard"

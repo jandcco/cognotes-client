@@ -26,7 +26,6 @@ class Register extends React.Component{
         password: this.state.password,
         displayName: this.state.displayName
       });
-      console.log(res);
     } catch (e){
       console.log(e);
     }

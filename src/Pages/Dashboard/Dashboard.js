@@ -12,7 +12,6 @@ class Dashboard extends Component{
   }
   async getUserNotes(){
     const notes = await axios.get(`http://cognotes.herokuapp.com/note?token=${this.props.token}`);
-    console.log(notes);
     this.setState({
       notes: notes.data
     })

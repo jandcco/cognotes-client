@@ -27,7 +27,6 @@ class CreateNoteForm extends React.Component{
       text: this.state.text,
       token: this.props.token
     });
-    console.log(res);
     const dashboard = {
       pathname: "/dashboard"
     };

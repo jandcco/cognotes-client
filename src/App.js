@@ -29,8 +29,6 @@ class App extends Component{
   }
 
   setWebToken(token){
-    console.log(`Token ${token} set on client`);
-
     this.setState({
       token,
       loggedIn: true
