@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import productionBaseURI from "../../appConfig";
 class Register extends React.Component{
   constructor(props){
     super(props);
@@ -20,7 +21,7 @@ class Register extends React.Component{
   async handleRegisterSubmission (event) {
     event.preventDefault();
     try{
-      const res = await axios.post("http://localhost:3001/users",{
+      const res = await axios.post(`${productionBaseURI}/users`,{
         email: this.state.email,
         password: this.state.password,
         displayName: this.state.displayName
